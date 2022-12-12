@@ -12,35 +12,35 @@ const TablaConceptos = () => {
   const compararConcepto = (tipoConcepto) => {
     if (tipoConcepto === 'ingresoPrincipal' && tipoConcepto) {
       return (
-        ingresoPrincipal.map((concep) => {
+        [...ingresoPrincipal].map((concep) => {
           const idConcep = uuidv4();
           return <Concepto tipo={concep.tipo} concepto={concep.concepto} monto={concep.monto} fecha={concep.fecha} categoria={concep.categoria} id={idConcep} key={idConcep} />
         })
       )
     } else if (tipoConcepto === 'otrosIngresos' && tipoConcepto) {
       return (
-        otrosIngresos.map((concep) => {
+        [...otrosIngresos].map((concep) => {
           const idConcep = uuidv4();
           return <Concepto tipo={concep} concepto={concep.concepto} monto={concep.monto} fecha={concep.fecha} categoria={concep.categoria} id={idConcep} key={idConcep} />
         })
       )
     } else if (tipoConcepto === 'gastosFijos' && tipoConcepto) {
       return (
-        gastosFijos.map((concep) => {
+        [...gastosFijos].map((concep) => {
           const idConcep = uuidv4();
           return <Concepto tipo={concep.tipo} concepto={concep.concepto} monto={concep.monto} fecha={concep.fecha} categoria={concep.categoria} id={idConcep} key={idConcep} />
         })
       )
     } else if (tipoConcepto === 'gastosPersonales' && tipoConcepto) {
       return (
-        gastosPersonales.map((concep) => {
+        [...gastosPersonales].map((concep) => {
           const idConcep = uuidv4();
           return <Concepto tipo={concep.tipo} concepto={concep.concepto} monto={concep.monto} fecha={concep.fecha} categoria={concep.categoria} id={idConcep} key={idConcep} />
         })
       )
     } else if (tipoConcepto === 'ahorroInversion' && tipoConcepto) {
       return (
-        ahorroInversion.map((concep) => {
+        [...ahorroInversion].map((concep) => {
           const idConcep = uuidv4();
           return <Concepto tipo={concep.tipo} concepto={concep.concepto} monto={concep.monto} fecha={concep.fecha} categoria={concep.categoria} id={idConcep} key={idConcep} />
         })
