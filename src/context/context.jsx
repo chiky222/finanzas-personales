@@ -80,23 +80,23 @@ const CartProvider = ({ children }) => {
     };
 
     const totalCategoria = (categoryName) => {
-        if (categoryName === ingresoPrincipal) {
+        if (categoryName === ingresoPrincipal && categoryName !== undefined) {
             let acumulador = 0;
             [...ingresoPrincipal].forEach((ing) => acumulador += +ing.monto);
             return acumulador || 0;
-        } else if (categoryName === otrosIngresos) {
+        } else if (categoryName === otrosIngresos && categoryName !== undefined) {
             let acumulador = 0;
             [...otrosIngresos].forEach((ing) => acumulador += +ing.monto);
             return acumulador || 0;
-        } else if (categoryName === gastosFijos) {
+        } else if (categoryName === gastosFijos && categoryName !== undefined) {
             let acumulador = 0;
             [...gastosFijos].forEach((ing) => acumulador += +ing.monto);
             return acumulador || 0;
-        } else if (categoryName === gastosPersonales) {
+        } else if (categoryName === gastosPersonales && categoryName !== undefined) {
             let acumulador = 0;
             [...gastosPersonales].forEach((ing) => acumulador += +ing.monto);
             return acumulador || 0;
-        } else if (categoryName === ahorroInversion) {
+        } else if (categoryName === ahorroInversion && categoryName !== undefined) {
             let acumulador = 0;
             [...ahorroInversion].forEach((ing) => acumulador += +ing.monto);
             return acumulador || 0;
