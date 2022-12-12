@@ -3,41 +3,43 @@ import { CartContext } from '../context/context';
 
 const Formulario = () => {
 
-  const [data, setData] = useState({ tipo: 'none', concepto: 'none', monto: 1000, fecha: '2022-12-01', categoria: 'none'});
+  const [data, setData] = useState({ tipo: 'none', concepto: '', monto: 1000, fecha: '2022-12-01', categoria: ''});
   const {ingresoPrincipal, setIngresoPrincipal, otrosIngresos, setOtrosIngresos, gastosFijos, setGastosFijos, gastosPersonales, setGastosPersonales, ahorroInversion, setAhorroInversion, resetAll} = useContext(CartContext);
 
   const enviarConcepto = (e) => {
     e.preventDefault();
-    if (data.tipo === 'Ingreso Principal' && revisarConcepto(ingresoPrincipal)) {
+    if (data.tipo === 'Ingreso Principal' && revisarConcepto(ingresoPrincipal) && data.monto > 0) {
         if (ingresoPrincipal[0]?.tipo === 'none' || !ingresoPrincipal) {            
             setIngresoPrincipal([data]);
         } else {
             setIngresoPrincipal([...ingresoPrincipal, data]);
         }            
-    } else if (data.tipo === 'Otros Ingresos' && revisarConcepto(otrosIngresos)) {
+    } else if (data.tipo === 'Otros Ingresos' && revisarConcepto(otrosIngresos) && data.monto > 0) {
         if (otrosIngresos[0]?.tipo === 'none' || !otrosIngresos) {            
             setOtrosIngresos([data]);
         } else {
             setOtrosIngresos([...otrosIngresos, data]);
         } 
-    } else if (data.tipo === 'Gastos Fijos' && revisarConcepto(gastosFijos)) {
+    } else if (data.tipo === 'Gastos Fijos' && revisarConcepto(gastosFijos) && data.monto > 0) {
         if (gastosFijos[0]?.tipo === 'none' || !gastosFijos) {            
             setGastosFijos([data]);
         } else {
             setGastosFijos([...gastosFijos, data]);
         } 
-    } else if (data.tipo === 'Gastos Personales' && revisarConcepto(gastosPersonales)) {
+    } else if (data.tipo === 'Gastos Personales' && revisarConcepto(gastosPersonales) && data.monto > 0) {
         if (gastosPersonales[0]?.tipo === 'none' || !gastosPersonales) {            
             setGastosPersonales([data]);
         } else {
             setGastosPersonales([...gastosPersonales, data]);
         } 
-    } else if (data.tipo === 'Ahorro e Inversión' && revisarConcepto(ahorroInversion)) {
+    } else if (data.tipo === 'Ahorro e Inversión' && revisarConcepto(ahorroInversion) && data.monto > 0) {
         if (ahorroInversion[0]?.tipo === 'none' || !ahorroInversion) {            
             setAhorroInversion([data]);
         } else {
             setAhorroInversion([...ahorroInversion, data]);
         } 
+    } else {
+        alert('Debe seleccionar un Tipo, y el monto debe ser positivo.');
     }
   }
 

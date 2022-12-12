@@ -10,35 +10,35 @@ const TablaConceptos = () => {
   const { tipoConcepto } = useParams();
 
   const compararConcepto = (tipoConcepto) => {
-    if (tipoConcepto === 'ingresoPrincipal') {
+    if (tipoConcepto === 'ingresoPrincipal' && tipoConcepto) {
       return (
         ingresoPrincipal.map((concep) => {
           const idConcep = uuidv4();
           return <Concepto tipo={concep.tipo} concepto={concep.concepto} monto={concep.monto} fecha={concep.fecha} categoria={concep.categoria} id={idConcep} key={idConcep} />
         })
       )
-    } else if (tipoConcepto === 'otrosIngresos') {
+    } else if (tipoConcepto === 'otrosIngresos' && tipoConcepto) {
       return (
         otrosIngresos.map((concep) => {
           const idConcep = uuidv4();
           return <Concepto tipo={concep} concepto={concep.concepto} monto={concep.monto} fecha={concep.fecha} categoria={concep.categoria} id={idConcep} key={idConcep} />
         })
       )
-    } else if (tipoConcepto === 'gastosFijos') {
+    } else if (tipoConcepto === 'gastosFijos' && tipoConcepto) {
       return (
         gastosFijos.map((concep) => {
           const idConcep = uuidv4();
           return <Concepto tipo={concep.tipo} concepto={concep.concepto} monto={concep.monto} fecha={concep.fecha} categoria={concep.categoria} id={idConcep} key={idConcep} />
         })
       )
-    } else if (tipoConcepto === 'gastosPersonales') {
+    } else if (tipoConcepto === 'gastosPersonales' && tipoConcepto) {
       return (
         gastosPersonales.map((concep) => {
           const idConcep = uuidv4();
           return <Concepto tipo={concep.tipo} concepto={concep.concepto} monto={concep.monto} fecha={concep.fecha} categoria={concep.categoria} id={idConcep} key={idConcep} />
         })
       )
-    } else if (tipoConcepto === 'ahorroInversion') {
+    } else if (tipoConcepto === 'ahorroInversion' && tipoConcepto) {
       return (
         ahorroInversion.map((concep) => {
           const idConcep = uuidv4();
