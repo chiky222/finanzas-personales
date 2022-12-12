@@ -100,6 +100,8 @@ const CartProvider = ({ children }) => {
             let acumulador = 0;
             [...ahorroInversion].forEach((ing) => acumulador += +ing.monto);
             return acumulador || 0;
+        } else {
+            return 0;
         }
     };
 
