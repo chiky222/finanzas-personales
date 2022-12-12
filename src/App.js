@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Formulario from './components/Formulario';
+import NavBar from './components/NavBar';
+import TablaConceptos from './components/TablaConceptos';
+import TablaResumen from './components/TablaResumen';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import CartProvider from './context/context';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <CartProvider>
+        <div className="App">
+          <header className="App-header">
+            <Formulario />
+            <NavBar />
+          </header>
+          <main>
+            <table className="tabla-container">
+              <Routes>
+                <Route path='/' element={ <TablaResumen />}/>
+                <Route path='/tablaConceptos/:tipoConcepto' element={ <TablaConceptos />}/>       
+              </Routes>
+            </table>
+          </main>
+        </div>
+      </CartProvider>
+      <footer>
+        <p className='footer-text'>Created by Chiky ©</p>
+      </footer>    
+    </BrowserRouter>
   );
 }
 
