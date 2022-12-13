@@ -10,35 +10,35 @@ const TablaConceptos = () => {
   const { tipoConcepto } = useParams();
 
   const compararConcepto = (tipoConcepto) => {
-    if (tipoConcepto === 'ingresoPrincipal' && tipoConcepto) {
+    if (tipoConcepto === 'ingresoPrincipal' && tipoConcepto && ingresoPrincipal) {
       return (
         [...ingresoPrincipal].map((concep) => {
           const idConcep = uuidv4();
           return <Concepto tipo={concep.tipo} concepto={concep.concepto} monto={concep.monto} fecha={concep.fecha} categoria={concep.categoria} id={idConcep} key={idConcep} />
         })
       )
-    } else if (tipoConcepto === 'otrosIngresos' && tipoConcepto) {
+    } else if (tipoConcepto === 'otrosIngresos' && tipoConcepto && otrosIngresos) {
       return (
         [...otrosIngresos].map((concep) => {
           const idConcep = uuidv4();
           return <Concepto tipo={concep} concepto={concep.concepto} monto={concep.monto} fecha={concep.fecha} categoria={concep.categoria} id={idConcep} key={idConcep} />
         })
       )
-    } else if (tipoConcepto === 'gastosFijos' && tipoConcepto) {
+    } else if (tipoConcepto === 'gastosFijos' && tipoConcepto && gastosFijos) {
       return (
         [...gastosFijos].map((concep) => {
           const idConcep = uuidv4();
           return <Concepto tipo={concep.tipo} concepto={concep.concepto} monto={concep.monto} fecha={concep.fecha} categoria={concep.categoria} id={idConcep} key={idConcep} />
         })
       )
-    } else if (tipoConcepto === 'gastosPersonales' && tipoConcepto) {
+    } else if (tipoConcepto === 'gastosPersonales' && tipoConcepto && gastosPersonales) {
       return (
         [...gastosPersonales].map((concep) => {
           const idConcep = uuidv4();
           return <Concepto tipo={concep.tipo} concepto={concep.concepto} monto={concep.monto} fecha={concep.fecha} categoria={concep.categoria} id={idConcep} key={idConcep} />
         })
       )
-    } else if (tipoConcepto === 'ahorroInversion' && tipoConcepto) {
+    } else if (tipoConcepto === 'ahorroInversion' && tipoConcepto && ahorroInversion) {
       return (
         [...ahorroInversion].map((concep) => {
           const idConcep = uuidv4();
