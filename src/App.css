@@ -161,11 +161,26 @@ td {
   border-collapse: collapse;
 }
 
+thead {
+  display: table-header-group;
+}
+
+tbody,
+thead {
+  display: table;
+}
+
 th,
 td {
   padding: 10px;
-  width: 290px;
+  /* width: 15vw; */
   text-align: center;
+  table-layout: fixed;
+  overflow-wrap: break-word;
+}
+
+.tabla-container {
+  word-break: break-all;
 }
 
 .celda-oculta {
@@ -183,15 +198,15 @@ th {
 
 table {
   margin-bottom: 100px;
-  height: 100vh;
+  height: 130vh;
 }
 
 .footer-text {
   display: flex;
   justify-content: flex-end;
-  margin-right: 75px;
-  margin-bottom: 20px;
+  margin: 100px 75px 20px 0;
   font-size: 30px;
+  height: 60px;
 }
 
 .x-borrar-celda {
@@ -204,4 +219,111 @@ table {
   color: #a544d1;
   cursor: pointer;
   user-select: none;
+}
+
+
+/* Responsive Medias */
+@media (max-width: 1280px){
+  
+  html, body {
+    width: 100%;
+  }
+
+  .formulario__btn {
+    margin-left: 0;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  thead, tbody {
+    scale: 0.6;
+  }
+
+  .tabla-resumen tbody {
+    position: absolute;
+    top: 1362px;
+  }
+
+  .tabla-conceptos tbody {    
+    position: absolute;
+    top: 1459px;
+  }
+
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .formulario__grupo {
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .formulario__grupo label {
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu-nav-lista {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    font-size: 25px;
+    padding: 0 20px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 800px){
+  .menu-nav-lista {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    font-size: 25px;
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .formulario__btn {
+    margin-left: 0;
+  }
+
+  thead, tbody {
+    scale: 0.38;
+  }
+
+  .tabla-resumen tbody {
+    position: absolute;
+    top: 1272px;
+  }
+
+  .tabla-conceptos tbody {    
+    position: absolute;
+    top: 1445px;
+  }
+}
+
+@media (max-width: 339px){
+  .tabla-resumen tbody {
+    position: absolute;
+    top: 1315px;
+  }
+
+  .tabla-conceptos tbody {    
+    position: absolute;
+    top: 1487px;
+  }
 }

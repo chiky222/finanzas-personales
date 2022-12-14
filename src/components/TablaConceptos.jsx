@@ -49,20 +49,20 @@ const TablaConceptos = () => {
   }
 
   return (
-    <>
+    <table className="tabla-container tabla-conceptos">
       <thead>
         <tr>
-          <th>Concepto:</th>
-          <th>Monto:</th>
-          <th>Fecha:</th>
-          <th>Categoría:</th>
-          <th>Eliminar:</th>
+          <th style={{minWidth: '180px', width: '280px'}} >Concepto:</th>
+          <th style={{minWidth: '180px', width: '280px'}} >Monto:</th>
+          <th style={{minWidth: '180px', width: '280px'}} >Fecha:</th>
+          <th style={{minWidth: '180px', width: '280px'}} >Categoría:</th>
+          <th style={{minWidth: '180px', width: '280px'}} >Eliminar:</th>
         </tr>
       </thead>
       <tbody>
         {compararConcepto(tipoConcepto)}
       </tbody>
-    </>
+    </table>
   )
 };
 

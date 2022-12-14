@@ -29,11 +29,11 @@ const Concepto = (concep) => {
 
   return (
     <tr>
-        <td>{concep.concepto}</td>
-        <td>$ {concep.monto}</td>
-        <td>{concep.fecha}</td>
-        <td>{concep.categoria}</td>
-        <td><p className='x-borrar-celda' onClick={() => eliminarConceptoIngPpal(tipoConcepto)} >X</p></td>
+        <td style={{minWidth: '180px', width: '280px'}} >{concep.concepto}</td>
+        <td style={{minWidth: '180px', width: '280px'}} >$ {concep.monto}</td>
+        <td style={{minWidth: '180px', width: '280px'}} >{concep.fecha}</td>
+        <td style={{minWidth: '180px', width: '280px'}} >{concep.categoria}</td>
+        <td style={{minWidth: '180px', width: '280px'}} ><p className='x-borrar-celda' onClick={() => eliminarConceptoIngPpal(tipoConcepto)} >X</p></td>
     </tr>
   )
 };

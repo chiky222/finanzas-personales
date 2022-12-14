@@ -17,12 +17,10 @@ function App() {
             <NavBar />
           </header>
           <main>
-            <table className="tabla-container">
               <Routes>
                 <Route path='/' element={ <TablaResumen />}/>
                 <Route path='/tablaConceptos/:tipoConcepto' element={ <TablaConceptos />}/>       
               </Routes>
-            </table>
           </main>
         </div>
       </CartProvider>
