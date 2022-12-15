@@ -153,7 +153,7 @@ const CartProvider = ({ children }) => {
           var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
           window.location.href = uri + base64(format(template, ctx))
         }
-      })()
+    })()
     
     return (
         <CartContext.Provider value={{ totalIngresos, totalGastos, totalCategoria, porcentajeCategoria, montoPresupuestado, ingresoPrincipal, setIngresoPrincipal, otrosIngresos, setOtrosIngresos, gastosFijos, setGastosFijos, gastosPersonales, setGastosPersonales, ahorroInversion, setAhorroInversion, resetAll, montoIngPpal, porcIngPpal, montoOtrosIng, porcOtrosIng, montoIngTotal, porcIngTotal, montoGtoFijo, porcGtoFijo, montoGtoPers, porcGtoPers, montoGtoTotal, porcGtoTotal, montoAhorroInv, porcAhorroInv, tableToExcel }}>

@@ -3,11 +3,14 @@ import { CartContext } from '../context/context';
 import Concepto from './Concepto';
 import { v4 as uuidv4 } from 'uuid';
 import { useParams } from 'react-router-dom';
+import { useRef } from 'react';
+import exportAsImage from '../utils/exportAsImage.js';
 
 const TablaConceptos = () => {
 
   const {ingresoPrincipal, otrosIngresos, gastosFijos, gastosPersonales, ahorroInversion, tableToExcel} = useContext(CartContext);
   const { tipoConcepto } = useParams();
+  const exportRef = useRef();
 
   const compararConcepto = (tipoConcepto) => {
     if (tipoConcepto === 'ingresoPrincipal' && tipoConcepto && ingresoPrincipal) {
@@ -50,7 +53,7 @@ const TablaConceptos = () => {
 
   return (
     <> 
-      <table className="tabla-container tabla-conceptos" id='tabla-conceptos'>
+      <table className="tabla-container tabla-conceptos" id='tabla-conceptos' ref={exportRef}>
         <thead>
           <tr>
             <th style={{minWidth: '180px', width: '280px'}} >Concepto:</th>
@@ -64,7 +67,8 @@ const TablaConceptos = () => {
           {compararConcepto(tipoConcepto)}
         </tbody>
       </table>   
-      <button type="button" style={{display: 'block', position: 'fixed', top: '87%'}} className="formulario__btn descarga" onClick={() => tableToExcel('tabla-conceptos', 'Presupuesto del Mes')}>Descargar</button>
+      <button type="button" style={{display: 'block', position: 'fixed', top: '87%'}} className="formulario__btn descarga" onClick={() => tableToExcel('tabla-conceptos', 'Presupuesto del Mes')}>Excel</button>
+      <button type="button" style={{display: 'block', position: 'fixed', top: '79%'}} className="formulario__btn descarga" onClick={() => exportAsImage(exportRef.current, "test")}>Imágen</button>
     </>
   )
 };
