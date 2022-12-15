@@ -25,17 +25,19 @@ const Concepto = (concep) => {
         const filtrados = ahorroInversion.filter((conc) => conc.concepto !== concep.concepto);
         setAhorroInversion(filtrados);
     }         
-}; 
+  }; 
 
-  return (
-    <tr>
-        <td style={{minWidth: '180px', width: '280px'}} >{concep.concepto}</td>
-        <td style={{minWidth: '180px', width: '280px'}} >$ {concep.monto}</td>
-        <td style={{minWidth: '180px', width: '280px'}} >{concep.fecha}</td>
-        <td style={{minWidth: '180px', width: '280px'}} >{concep.categoria}</td>
-        <td style={{minWidth: '180px', width: '280px'}} ><p className='x-borrar-celda' onClick={() => eliminarConceptoIngPpal(tipoConcepto)} >X</p></td>
-    </tr>
-  )
+  if (concep.monto !== 0) {
+    return (
+      <tr>
+          <td style={{minWidth: '180px', width: '280px'}} >{concep.concepto}</td>
+          <td style={{minWidth: '180px', width: '280px'}} >$ {concep.monto}</td>
+          <td style={{minWidth: '180px', width: '280px'}} >{concep.fecha}</td>
+          <td style={{minWidth: '180px', width: '280px'}} >{concep.categoria}</td>
+          <td style={{minWidth: '180px', width: '280px'}} ><p className='x-borrar-celda' onClick={() => eliminarConceptoIngPpal(tipoConcepto)} >X</p></td>
+      </tr>
+    )
+  }  
 };
 
 export default Concepto;
