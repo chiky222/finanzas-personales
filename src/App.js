@@ -4,7 +4,8 @@ import NavBar from './components/NavBar';
 import TablaConceptos from './components/TablaConceptos';
 import TablaResumen from './components/TablaResumen';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import CartProvider from './context/context';
+import CartProvider, { CartContext } from './context/context';
+import { useContext } from 'react';
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
               <Routes>
                 <Route path='/' element={ <TablaResumen />}/>
                 <Route path='/tablaConceptos/:tipoConcepto' element={ <TablaConceptos />}/>       
-              </Routes>
+              </Routes>              
           </main>
         </div>
       </CartProvider>

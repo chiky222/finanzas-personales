@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 
 const TablaConceptos = () => {
 
-  const {ingresoPrincipal, otrosIngresos, gastosFijos, gastosPersonales, ahorroInversion} = useContext(CartContext);
+  const {ingresoPrincipal, otrosIngresos, gastosFijos, gastosPersonales, ahorroInversion, tableToExcel} = useContext(CartContext);
   const { tipoConcepto } = useParams();
 
   const compararConcepto = (tipoConcepto) => {
@@ -49,20 +49,23 @@ const TablaConceptos = () => {
   }
 
   return (
-    <table className="tabla-container tabla-conceptos">
-      <thead>
-        <tr>
-          <th style={{minWidth: '180px', width: '280px'}} >Concepto:</th>
-          <th style={{minWidth: '180px', width: '280px'}} >Monto:</th>
-          <th style={{minWidth: '180px', width: '280px'}} >Fecha:</th>
-          <th style={{minWidth: '180px', width: '280px'}} >Categoría:</th>
-          <th style={{minWidth: '180px', width: '280px'}} >Eliminar:</th>
-        </tr>
-      </thead>
-      <tbody>
-        {compararConcepto(tipoConcepto)}
-      </tbody>
-    </table>
+    <> 
+      <table className="tabla-container tabla-conceptos" id='tabla-conceptos'>
+        <thead>
+          <tr>
+            <th style={{minWidth: '180px', width: '280px'}} >Concepto:</th>
+            <th style={{minWidth: '180px', width: '280px'}} >Monto:</th>
+            <th style={{minWidth: '180px', width: '280px'}} >Fecha:</th>
+            <th style={{minWidth: '180px', width: '280px'}} >Categoría:</th>
+            <th style={{minWidth: '180px', width: '280px'}} >Eliminar:</th>
+          </tr>
+        </thead>
+        <tbody>
+          {compararConcepto(tipoConcepto)}
+        </tbody>
+      </table>   
+      <button type="button" style={{display: 'block', position: 'fixed', top: '87%'}} className="formulario__btn descarga" onClick={() => tableToExcel('tabla-conceptos', 'Presupuesto del Mes')}>Descargar</button>
+    </>
   )
 };
 

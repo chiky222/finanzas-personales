@@ -198,7 +198,11 @@ th {
 
 table {
   margin-bottom: 100px;
-  height: 130vh;
+  height: 140vh;
+}
+
+.descarga {
+  background-color: #ff237f;
 }
 
 .footer-text {
@@ -220,7 +224,6 @@ table {
   cursor: pointer;
   user-select: none;
 }
-
 
 /* Responsive Medias */
 @media (max-width: 1280px){
